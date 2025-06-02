@@ -14,7 +14,7 @@ pipeline {
         }
          stage('deploy'){
             steps{
-                eo "this is deploy new update"
+                echo "this is deploy new update"
             }
         }
     }
