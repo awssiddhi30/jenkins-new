@@ -14,7 +14,7 @@ pipeline {
         }
          stage('deploy'){
             steps{
-                eco "this is deploy new update"
+                echho "this is deploy new update"
             }
         }
     }
