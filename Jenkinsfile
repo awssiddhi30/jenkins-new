@@ -11,11 +11,17 @@ pipeline {
 
         }
         stage('test'){
+            agent{
+                label 'agent-1'
+            }
             steps{
                 echo "this is test"
             }
         }
          stage('deploy'){
+            agent{
+                label 'agent-1'
+            }
             steps{
                 echo "this is deploy new update"
             }
