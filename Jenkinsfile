@@ -25,7 +25,16 @@ pipeline {
                 echo "course is $course"
             }
         }
+        
          stage('deploy'){
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'siri', description: 'Who should I say hello to?')
+                }
+            }
             steps{
                 echo "this is deploy new update"
             }
