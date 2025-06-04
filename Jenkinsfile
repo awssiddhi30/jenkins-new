@@ -4,6 +4,10 @@ pipeline {
         timeout(time: 15, unit: 'SECONDS')
         disableConcurrentBuilds()
     }
+    environment {
+        project ="expense"
+        course ="devops"
+    }
     stages{
         stage('build'){
             steps{
