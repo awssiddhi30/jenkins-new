@@ -86,6 +86,9 @@ pipeline {
                     agent {
                         label "for-branch-c"
                     }
+                    steps {
+                        echo "On Branch c"
+                    }
                 }
         
             }
