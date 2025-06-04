@@ -33,9 +33,8 @@ pipeline {
 
                 echo "Password: ${params.PASSWORD}"
             }
-            }
-
         }
+
         stage('test'){
             steps{
                 echo "this is test"
@@ -73,4 +72,4 @@ pipeline {
         }
     } 
 
-
+}
