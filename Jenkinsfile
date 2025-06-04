@@ -8,13 +8,31 @@ pipeline {
         project ="expense"
         course ="devops"
     }
+     parameters {
+        string(name: 'PERSON', defaultValue: 'Mr aditya', description: 'Who should I say hello to?')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
     stages{
         stage('build'){
             steps{
                 echo "this is build"
-                sh """
-                  sleep 10
-                """
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
+            }
             }
 
         }
@@ -27,14 +45,14 @@ pipeline {
         }
         
          stage('deploy'){
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "ARUN"
-                parameters {
-                    string(name: 'PERSON', defaultValue: 'siri', description: 'Who should I say hello to?')
-                }
-            }
+            // input {
+            //     message "Should we continue?"
+            //     ok "Yes, we should."
+            //     submitter "ARUN"
+            //     parameters {
+            //         string(name: 'PERSON', defaultValue: 'siri', description: 'Who should I say hello to?')
+            //     }
+            // }
             steps{
                 echo "this is deploy new update"
             }
@@ -55,4 +73,4 @@ pipeline {
         }
     } 
 
-}
+
