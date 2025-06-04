@@ -64,8 +64,8 @@ pipeline {
                 echo "this is deploy new update"
             }
         }
-    
-        parallel{
+        stage('parallel'){
+            parallel{
                 stage('Branch A') {
                     agent {
                         label "for-branch-a"
@@ -87,6 +87,7 @@ pipeline {
                         label "for-branch-c"
                     }
                 }
+        
             }
     }
     post {
@@ -104,4 +105,5 @@ pipeline {
         }
     } 
 
+}
 }
