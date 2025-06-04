@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages{
         stage('build'){
             agent{
@@ -27,4 +27,19 @@ pipeline {
             }
         }
     }
+    post {
+        always{
+            echo "run always"
+        }
+        success{
+            echo "build successsfully"
+        }
+        failure{
+            echo "build failed"
+        }
+        aborted{
+            echo "build aborted"
+        }
+    } 
+
 }
