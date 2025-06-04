@@ -1,27 +1,18 @@
 pipeline {
     agent any
     stages{
-        stage('build'){
-            agent{
-                label 'agent-1'
-            }
+        stage('build')
             steps{
                 echo "this is build"
             }
 
         }
-        stage('test'){
-            agent{
-                label 'agent-1'
-            }
+        stage('test')
             steps{
                 echo "this is test"
             }
         }
-         stage('deploy'){
-            agent{
-                label 'agent-1'
-            }
+         stage('deploy')
             steps{
                 echo "this is deploy new update"
             }
