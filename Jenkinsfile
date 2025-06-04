@@ -8,6 +8,7 @@ pipeline {
         project ="expense"
         course ="devops"
         DEPLOY_TO = "production"
+        branch="master"
     }
      parameters {
         string(name: 'PERSON', defaultValue: 'Mr aditya', description: 'Who should I say hello to?')
