@@ -21,6 +21,8 @@ pipeline {
         stage('test'){
             steps{
                 echo "this is test"
+                echo "project is $project"
+                echo "course is $course"
             }
         }
          stage('deploy'){
