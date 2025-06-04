@@ -7,6 +7,7 @@ pipeline {
     environment {
         project ="expense"
         course ="devops"
+        DEPLOY_TO = dev
     }
      parameters {
         string(name: 'PERSON', defaultValue: 'Mr aditya', description: 'Who should I say hello to?')
@@ -44,7 +45,13 @@ pipeline {
         }
         
          stage('deploy'){
-            // input {
+            when {
+                environment name: 'DEPLOY_TO', value: 'production'
+                expression { return env.branch == 'main' }
+                }
+
+
+             // input {
             //     message "Should we continue?"
             //     ok "Yes, we should."
             //     submitter "ARUN"
