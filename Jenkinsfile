@@ -66,22 +66,22 @@ pipeline {
         }
         stage('parallel'){
             parallel{
-                stage('Branch A') {
+                stage('homepage') {
                     
                     steps {
-                        echo "On Branch A"
+                        echo "open homepage"
                     }
                 }
-                stage('Branch B') {
+                stage('upload') {
                    
                     steps {
-                        echo "On Branch B"
+                        echo "upload images"
                     }
                 }
-                stage('Branch C') {
+                stage('post') {
                     
                     steps {
-                        echo "On Branch c"
+                        echo "post"
                     }
                 }
         
