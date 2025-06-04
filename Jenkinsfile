@@ -45,7 +45,7 @@ pipeline {
             }
         }
         
-         stage('deploy'){
+        stage('deploy'){
             when {
                 environment name: 'DEPLOY_TO', value: 'production'
                 expression { return env.branch == 'master' }
@@ -63,9 +63,9 @@ pipeline {
             steps{
                 echo "this is deploy new update"
             }
-         }
+        }
     
-     parallel {
+        parallel{
                 stage('Branch A') {
                     agent {
                         label "for-branch-a"
@@ -87,7 +87,7 @@ pipeline {
                         label "for-branch-c"
                     }
                 }
-           }
+            }
     }
     post {
         always{
