@@ -7,7 +7,7 @@ pipeline {
     environment {
         project ="expense"
         course ="devops"
-        DEPLOY_TO = dev
+        DEPLOY_TO = "dev"
     }
      parameters {
         string(name: 'PERSON', defaultValue: 'Mr aditya', description: 'Who should I say hello to?')
