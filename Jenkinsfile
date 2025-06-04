@@ -1,22 +1,22 @@
 pipeline {
     agent any
     stages{
-        stage('build')
+        stage('build'){
             steps{
                 echo "this is build"
             }
 
         }
-        stage('test')
+        stage('test'){
             steps{
                 echo "this is test"
             }
         }
-         stage('deploy')
+         stage('deploy'){
             steps{
                 echo "this is deploy new update"
             }
-        }
+         }
     }
     post {
         always{
