@@ -48,7 +48,7 @@ pipeline {
          stage('deploy'){
             when {
                 environment name: 'DEPLOY_TO', value: 'production'
-                expression { return env.branch == 'main' }
+                expression { return env.branch == 'master' }
                 }
 
 
