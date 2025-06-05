@@ -112,7 +112,7 @@ pipeline {
         }
         failure{
             echo "build failed"
-            deleteDir()
+            
         }
         aborted{
             echo "build aborted"
