@@ -33,7 +33,7 @@ pipeline {
 
                 echo "Choice: ${params.CHOICE}"
 
-                echo "Password: ${params.PASSWORD}"
+                eo "Password: ${params.PASSWORD}"
             }
         }
 
