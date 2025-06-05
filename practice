@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+    options{
+        disableConcurrentBuilds()
+        timeout(time: 5, unit: 'MINUTES')
+        retry(2)
+    }
+    environment{
+        project ='expense'
+        environment ='dev'
+    }
+    parameters{
+     string (name:'person' ,    defaultValue:'sampath' , destriptn: 'this is user name')
+    }
+    stages{
+        stage('build'){
+           steps{
+            echo "this is build"
+           }
+
+        }
+    }
+
+    post{
+        always{
+            
+        }
+        success{
+
+        }
+        failure{
+            
+        }
+
+    }
+
+
+
+    
+     
+}
